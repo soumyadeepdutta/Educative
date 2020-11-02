@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'v8!&033wn*ggs3wd7pze-_zyz6cjzyl-s9z1anlf!%s8tbj6if'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['educative-py.herokuapp.com', '127.0.0.1', 'localhost']
 

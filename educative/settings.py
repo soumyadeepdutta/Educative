@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'v8!&033wn*ggs3wd7pze-_zyz6cjzyl-s9z1anlf!%s8tbj6if'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://git.heroku.com/educative-py.git', '127.0.0.1', 'localhost']
 
 
 # Application definition

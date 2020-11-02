@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs" data-aos="fade-in">
+    <div class="container">
+        <h2>Course Details</h2>
+    </div>
+</div><!-- End Breadcrumbs -->
+<!-- ======= Cource Details Section ======= -->
+<section id="course-details" class="course-details">
+    <div class="container" data-aos="fade-up">
+        {% if course %}
+        <div class="row">
+            <div class="col-lg-8">
+                <img src="{{course.thumbnail.url}}" class="img-fluid" alt="{{course.name}}">
+                <h3>{{course.name}}</h3>
+                <p>
+                    {{course.description}}
+                </p>
+            </div>
+            <div class="col-lg-4">
+
+                <div class="course-info d-flex justify-content-between align-items-center">
+                    <h5>Author</h5>
+                    <p><a href="#">{{course.author}}</a></p>
+                </div>
+
+                <div class="course-info d-flex justify-content-between align-items-center">
+                    <h5>Course Fee</h5>
+                    <p>&#x20B9;{{course.price}}</p>
+                </div>
+
+            </div>
+        </div>
+        {% else %}
+        <h3>Course not found</h3>
+        {% endif %}
+    </div>
+</section><!-- End Course Details Section -->
+
+{% endblock %}
+
+
+<html>
+<head>
+    <title>Course</title>
+</head>
+<body>
+<div>
+    <h3>Course Detail</h3>
+    {% if course %}
+    <iframe width="560" height="315" src="{{course.url}}" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    <p>{{course.name}}</p>
+    {% endif %}
+</div>
+</body>
+</html>

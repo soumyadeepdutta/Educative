@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex justify-content-center align-items-center">
+    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+        <h1>Learning Today,<br>Leading Tomorrow</h1>
+        <h2>Join Educative Family and Enhance Your Skills </h2>
+        <a href="courses.html" class="btn-get-started">Get Started</a>
+    </div>
+</section><!-- End Hero -->
+
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>About</h2>
+            <p>About Us</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+                <img src="{% static 'assets/img/about.jpg' %}" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                <h3>A group of Developers willing to share their experience</h3>
+                <!--                    <p class="font-italic">-->
+                <!--                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut-->
+                <!--                        labore et dolore-->
+                <!--                        magna aliqua.-->
+                <!--                    </p>-->
+                <ul>
+                    <li><i class="icofont-check-circled"></i> Learn from experienced developers
+                    </li>
+                    <li><i class="icofont-check-circled"></i> Industrial professionals as guest lecturers
+                    </li>
+                    <li><i class="icofont-check-circled"></i> 3 times a week live doubt clearance
+                    </li>
+                </ul>
+                <a href="#" class="learn-more-btn">Learn More</a>
+            </div>
+        </div>
+
+    </div>
+</section><!-- End About Section -->
+
+<!-- ======= Features Section ======= -->
+<section id="features" class="features">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>Categories</h2>
+            <p>Different category of courses we offer</p>
+        </div>
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-lg-3 col-md-4">
+                <div class="icon-box">
+<!--                    <i class="ri-store-line" style="color: #ffbb2c;"></i>-->
+                    <h3><a href="">Lorem Ipsum</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End Features Section -->
+
+<!-- ======= Popular Courses Section ======= -->
+<section id="popular-courses" class="courses">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Courses</h2>
+            <p>Popular Courses</p>
+        </div>
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+            {% for course in object_list %}
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="course-item">
+                    <img src="{{course.thumbnail.url}}" class="img-fluid" alt="{{course.name}}">
+                    <div class="course-content">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4>{{course.category}}</h4>
+                            <p class="price">&#x20B9;{{course.price}}</p>
+                        </div>
+
+                        <h3><a href="{% url 'course:courseDetail' course.pk %}">{{course.name}}</a></h3>
+                        <p>{{course.description | truncatewords:30}}</p>
+                        <div class="trainer d-flex justify-content-between align-items-center">
+                            <div class="trainer-profile d-flex align-items-center">
+                                <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                                <span>{{course.author}}</span>
+                            </div>
+                            <div class="btn-wrap">
+                                <a href="{% url 'course:courseDetail' course.pk %}" class="btn-buy">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End Course Item-->
+            {% endfor %}
+        </div>
+
+    </div>
+</section><!-- End Popular Courses Section -->
+
+<!-- ======= Trainers Section ======= -->
+<section id="trainers" class="trainers">
+    <!--        <div class="container" data-aos="fade-up">-->
+
+    <!--            <div class="section-title">-->
+    <!--                <h2>Trainers</h2>-->
+    <!--                <p>Our Professional Trainers</p>-->
+    <!--            </div>-->
+
+    <!--            <div class="row" data-aos="zoom-in" data-aos-delay="100">-->
+    <!--                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">-->
+    <!--                    <div class="member">-->
+    <!--                        <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">-->
+    <!--                        <div class="member-content">-->
+    <!--                            <h4>Walter White</h4>-->
+    <!--                            <span>Web Development</span>-->
+    <!--                            <p>-->
+    <!--                                Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis-->
+    <!--                                quaerat qui aut aut aut-->
+    <!--                            </p>-->
+    <!--                            <div class="social">-->
+    <!--                                <a href=""><i class="icofont-twitter"></i></a>-->
+    <!--                                <a href=""><i class="icofont-facebook"></i></a>-->
+    <!--                                <a href=""><i class="icofont-instagram"></i></a>-->
+    <!--                                <a href=""><i class="icofont-linkedin"></i></a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+
+    <!--                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">-->
+    <!--                    <div class="member">-->
+    <!--                        <img src="assets/img/trainers/trainer-2.jpg" class="img-fluid" alt="">-->
+    <!--                        <div class="member-content">-->
+    <!--                            <h4>Sarah Jhinson</h4>-->
+    <!--                            <span>Marketing</span>-->
+    <!--                            <p>-->
+    <!--                                Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum-->
+    <!--                                rerum temporibus-->
+    <!--                            </p>-->
+    <!--                            <div class="social">-->
+    <!--                                <a href=""><i class="icofont-twitter"></i></a>-->
+    <!--                                <a href=""><i class="icofont-facebook"></i></a>-->
+    <!--                                <a href=""><i class="icofont-instagram"></i></a>-->
+    <!--                                <a href=""><i class="icofont-linkedin"></i></a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+
+    <!--                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">-->
+    <!--                    <div class="member">-->
+    <!--                        <img src="assets/img/trainers/trainer-3.jpg" class="img-fluid" alt="">-->
+    <!--                        <div class="member-content">-->
+    <!--                            <h4>William Anderson</h4>-->
+    <!--                            <span>Content</span>-->
+    <!--                            <p>-->
+    <!--                                Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum-->
+    <!--                                toro des clara-->
+    <!--                            </p>-->
+    <!--                            <div class="social">-->
+    <!--                                <a href=""><i class="icofont-twitter"></i></a>-->
+    <!--                                <a href=""><i class="icofont-facebook"></i></a>-->
+    <!--                                <a href=""><i class="icofont-instagram"></i></a>-->
+    <!--                                <a href=""><i class="icofont-linkedin"></i></a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+
+    <!--            </div>-->
+
+    <!--        </div>-->
+</section><!-- End Trainers Section -->
+{% endblock %}

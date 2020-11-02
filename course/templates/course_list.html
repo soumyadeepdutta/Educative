@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs">
+    <div class="container">
+        <h2>Courses</h2>
+        <p>List of Courses we offer</p>
+    </div>
+</div><!-- End Breadcrumbs -->
+
+<!-- ======= Courses Section ======= -->
+<section id="courses" class="courses">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+            {% for course in object_list %}
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="course-item">
+                    <img src="{{course.thumbnail.url}}" class="img-fluid" alt="{{course.name}}">
+                    <div class="course-content">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4>Web Development</h4>
+                            <p class="price">&#x20B9;{{course.price}}</p>
+                        </div>
+
+                        <h3><a href="{% url 'course:courseDetail' course.pk %}">{{course.name}}</a></h3>
+                        <p>{{course.description|truncatewords:30}}</p>
+                        <div class="trainer d-flex justify-content-between align-items-center">
+                            <div class="trainer-profile d-flex align-items-center">
+                                <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                                <span>{{course.author}}</span>
+                            </div>
+                            <div class="btn-wrap">
+                                <a href="{% url 'course:courseDetail' course.pk %}" class="btn-buy">Details</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div> <!-- End Course Item-->
+            {% endfor %}
+        </div>
+
+    </div>
+</section><!-- End Courses Section -->
+
+{% endblock %}

@@ -5,7 +5,7 @@ Django Education Website (This is a Demo project I have been assigned to)
 
 **Done**
 - Added templates from bootstarpmade.com with customization
-- Use class based view to follow DRY
+- Use class based view to follow DRY (This is the first time I'm using class based view)
 - List all courses
 - View detail of a course
 - User registration

@@ -54,8 +54,8 @@
             <!--          <li class="active"><a href="index.html">Home</a></li>-->
             <!--          <li><a href="about.html">About</a></li>-->
                       <li><a href="{% url 'course:courseList' %}">Courses</a></li>
-            <!--          <li><a href="trainers.html">Trainers</a></li>-->
-            <!--          <li><a href="events.html">Events</a></li>-->
+                      <li><a href="{% url 'account:registerStudent' %}">Register</a></li>
+                      <li><a href="{% url 'login' %}">Login</a></li>
             <!--          <li><a href="pricing.html">Pricing</a></li>-->
             <!--          <li class="drop-down"><a href="">Drop Down</a>-->
             <!--            <ul>-->
@@ -79,7 +79,7 @@
                     </ul>
         </nav><!-- .nav-menu -->
 
-        <a href="#" class="get-started-btn">Get Started</a>
+        <a href="{% url 'account:registerStudent' %}" class="get-started-btn">Get Started</a>
 
     </div>
 </header><!-- End Header -->

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="d-flex justify-content-center align-items-center" style="padding-top:7rem">
+<div class="form-group">
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        {{student_form.as_p}}
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
+</section>
+{% endblock %}

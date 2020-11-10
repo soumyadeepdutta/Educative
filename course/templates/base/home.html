@@ -91,7 +91,7 @@
                         <div class="trainer d-flex justify-content-between align-items-center">
                             <div class="trainer-profile d-flex align-items-center">
                                 <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
-                                <span>{{course.author}}</span>
+                                <span>{{course.author.get_full_name}}</span>
                             </div>
                             <div class="btn-wrap">
                                 <a href="{% url 'course:courseDetail' course.pk %}" class="btn-buy">Details</a>

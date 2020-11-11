@@ -77,14 +77,14 @@
                     </ul>
         </nav><!-- .nav-menu -->
 
-        <a href="#" class="get-started-btn">Get Started</a>
+        <a href="{% url 'account:register' %}" class="get-started-btn">Get Started</a>
 
     </div>
 </header><!-- End Header -->
 
 
 <!-- ======= Main Section ======= -->
-<main id="main">
+<main id="main" class="container">
     {% block content %}
     {% endblock %}
 </main><!-- End #main -->

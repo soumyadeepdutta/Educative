@@ -5,7 +5,6 @@ from django.utils.translation import gettext_lazy as _
 
 
 class UserManager(BaseUserManager):
-
     def create_user(
             self, email, first_name, last_name, password=None,
             commit=True):

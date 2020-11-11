@@ -9,9 +9,9 @@ Django Education Website (This is a Demo project I have been assigned to)
 - List all courses
 - View detail of a course
 - User registration
+- User login
 
 **To be done**
-- User login
 - Enroll course
 
 **Copyright**

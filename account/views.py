@@ -1,20 +1,20 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.messages.views import SuccessMessageMixin
+from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
-from django.views import View
-from django.contrib.auth.views import AuthenticationForm
+from django.views.generic import CreateView, DetailView
+from .forms import RegistrationForm
+from django.contrib.auth import get_user_model
 
 
-class RegistrationView(CreateView):
-    form_class = UserCreationForm
-    # model = User
+class RegisterView(SuccessMessageMixin, CreateView):
+    form_class = RegistrationForm
     template_name = 'register.html'
-    print('registered')
-    success_url = reverse_lazy('course:courseList')
-    # fields = ('username', 'password1')
+    success_url = reverse_lazy('account:login')
+    success_message = 'Profile created successfully'
 
 
-class LoginView(View):
-    form_class = AuthenticationForm
-    template_name = 'login.html'
-    success_url = reverse_lazy('course:courseList')
+class ProfileView(DetailView):
+    model = get_user_model()
+    template_name = 'profile.html'
+    slug_field = 'email'
+    context_object_name = 'profile'

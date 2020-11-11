@@ -1,26 +1,30 @@
 # Educative
-Django Education Website (This is a Demo project I have been assigned to)
+Django Education Website.
+
+The project is deployed on [Heroku](https://educative-py.herokuapp.com/).
 
 ## Project idea
+**Brief**
+
+1. User can register with first name, last name, email, password. 
+2. View the list of courses offered
+3. Login with email and password
+4. Enroll a bunch courses.
 
 **Done**
-- Added templates from bootstarpmade.com with customization
-- Use class based view to follow DRY (This is the first time I'm using class based view)
+- Added [template](https://bootstrapmade.com/mentor-free-education-bootstrap-theme/) from bootstarpmade.com with customization
+- Use class based view to follow DRY
 - List all courses
 - View detail of a course
+- Custom user model
 - User registration
+- User login with email
 
 **To be done**
-- User login
+- User roles
 - Enroll course
 
 **Copyright**
 
-I used some photos from unsplash and some videos from youtube. This is for learning purpose only. I don't hold any rights of these assets, except the code. :sweat_smile:
-
-### Deployment
-The project is deployed on [Heroku](https://educative-py.herokuapp.com/).
-
-<small>I did a sily mistake here. I pushed the 'master' branch with some bugs need to be fixed. <br/>
-  The 'auth' brach is deployed live.
-</small>
+I used some photos from unsplash and some videos from youtube.
+This is for learning purpose only. I don't hold any rights of these assets, except the code. :sweat_smile:

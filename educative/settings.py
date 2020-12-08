@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'course',
-    'account',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -63,14 +63,13 @@ WSGI_APPLICATION = 'educative.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 AUTH_USER_MODEL = 'account.User'
@@ -119,3 +118,6 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
+AUTH_USER_MODEL = 'accounts.User'
+LOGIN_REDIRECT_URL = 'accounts:profile'

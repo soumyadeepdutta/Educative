@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs" data-aos="fade-in">
+    <div class="container">
+        {% if auth %}
+        <h2>{{auth}}</h2>
+        {% else %}
+        <h2>Login</h2>
+        {% endif %}
+    </div>
+</div>
+<!-- End Breadcrumbs -->
+<div class='container' data-aos='fade-up'>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+</form>
+
+
+{% if auth %}
+    <p> Already a user? <a href="{% url 'accounts:login' %}">Login</a> </p> 
+    {% else %}
+    <p> New user? <a href="{% url 'accounts:register' %}">Signup</a> </p>
+{% endif %}
+
+</div>
+{% endblock content %}

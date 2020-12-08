@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs" data-aos="fade-in">
+    <div class="container">
+        <h2>Profile</h2>
+    </div>
+</div>
+<!-- End Breadcrumbs -->
+{% if user.is_authenticated %}
+{{user.get_full_name}}
+{% endif %}
+{% endblock content %}

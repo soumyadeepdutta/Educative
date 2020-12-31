@@ -79,7 +79,7 @@
             {% for course in object_list %}
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="course-item">
-                    <img src="{{course.thumbnail.url}}" class="img-fluid" alt="{{course.name}}">
+                    <img src="{{course.thumbnail}}" class="img-fluid" alt="{{course.name}}">
                     <div class="course-content">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h4>{{course.category}}</h4>
@@ -90,7 +90,6 @@
                         <p>{{course.description | truncatewords:30}}</p>
                         <div class="trainer d-flex justify-content-between align-items-center">
                             <div class="trainer-profile d-flex align-items-center">
-                                <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
                                 <span>{{course.author.get_full_name}}</span>
                             </div>
                             <div class="btn-wrap">

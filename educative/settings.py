@@ -1,10 +1,8 @@
-
 import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -16,7 +14,6 @@ SECRET_KEY = 'v8!&033wn*ggs3wd7pze-_zyz6cjzyl-s9z1anlf!%s8tbj6if'
 DEBUG = True
 
 ALLOWED_HOSTS = ['educative-py.herokuapp.com', '127.0.0.1', 'localhost']
-
 
 # Application definition
 
@@ -61,7 +58,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'educative.wsgi.application'
 
-
 # Database
 DATABASES = {
     'default': {
@@ -69,10 +65,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
-
-AUTH_USER_MODEL = 'account.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -92,7 +84,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -106,7 +97,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
@@ -117,7 +107,6 @@ STATICFILES_DIRS = [
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 
 AUTH_USER_MODEL = 'accounts.User'
 LOGIN_REDIRECT_URL = 'accounts:profile'

@@ -9,7 +9,7 @@
     <!-- End Breadcrumbs -->
     <div class='container' data-aos='fade-up' style="margin-top: 5px;">
         <div class="form-group">
-            <form>
+            <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button type="submit" class="btn btn-warning">Register</button>

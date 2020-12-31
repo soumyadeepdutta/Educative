@@ -1,9 +1,7 @@
-# from django.shortcuts import render
-
-from django.views.generic.edit import CreateView
-from django.views.generic import TemplateView
+from django.shortcuts import render
+from course.models import Enrollment
+from django.views.generic import CreateView
 from django.urls import reverse_lazy
-from django.contrib.auth import get_user_model
 from .forms import SignupForm
 
 
@@ -14,6 +12,6 @@ class SignupView(CreateView):
     success_url = reverse_lazy('accounts:profile')
 
 
-class ProfileView(TemplateView):
-    model = get_user_model()
-    template_name = 'profile.html'
+def profile(request):
+    enrollments = Enrollment.objects.filter(student=request.user)
+    return render(request, template_name='profile.html', context={'enrollments': enrollments})

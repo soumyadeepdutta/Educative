@@ -26,14 +26,15 @@ class Category(models.Model):
 class Course(models.Model):
     name = models.CharField(max_length=128)
     description = models.TextField()
-    category = models.ManyToManyField(Category)
-    thumbnail = models.ImageField(upload_to='images', default='')
+    category = models.ForeignKey(Category, default=1, on_delete=models.PROTECT)
+    thumbnail = models.URLField(help_text='image url from unsplash/pexels')
     published_on = models.DateTimeField(auto_now_add=True)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     author = models.ForeignKey(get_user_model(), on_delete=models.PROTECT)
 
     def __str__(self):
         return self.name
+
 
 class Enrollment(models.Model):
     student = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)

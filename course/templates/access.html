@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="d-flex justify-content-center align-items-center">
+        <!-- ======= Course Details Section ======= -->
+        <section id="course-details" class="course-details">
+            <div class="container" data-aos="fade-up">
+                {% if course %}
+                    <div class="row">
+                        <div class="col-lg-8">
+                         {{ course }}
+                        </div>
+                    </div>
+                {% else %}
+                    <h3>Course not found</h3>
+                {% endif %}
+            </div>
+        </section>
+        <!-- End Course Details Section -->
+
+    </section>
+{% endblock %}

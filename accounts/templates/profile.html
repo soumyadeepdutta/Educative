@@ -24,7 +24,14 @@
             <h3>Enrollments</h3>
             {% if enrollments %}
                 {% for enrollment in enrollments %}
-                    {{ enrollment }}
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ enrollment.course.thumbnail }}" alt="{{ enrollment.course }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ enrollment.course }}</h5>
+                            <p class="card-text">{{ enrollment.course.description }}</p>
+                            <a href="{% url 'course:access'  enrollment.course.pk %}" class="btn btn-primary">Learn</a>
+                        </div>
+                    </div>
                 {% endfor %}
             {% else %}
                 <p>No course enrolled</p>

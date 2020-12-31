@@ -30,31 +30,15 @@
                     <h5>Course Fee</h5>
                     <p>&#x20B9;{{course.price}}</p>
                 </div>
-
+                <button class="btn btn-buy"><a href="{% url 'course:enroll' course.pk %}">Enroll</a> </button>
             </div>
         </div>
         {% else %}
         <h3>Course not found</h3>
         {% endif %}
     </div>
-</section><!-- End Course Details Section -->
+</section>
+    <!-- End Course Details Section -->
 
 {% endblock %}
 
-
-<html>
-<head>
-    <title>Course</title>
-</head>
-<body>
-<div>
-    <h3>Course Detail</h3>
-    {% if course %}
-    <iframe width="560" height="315" src="{{course.url}}" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-    <p>{{course.name}}</p>
-    {% endif %}
-</div>
-</body>
-</html>

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" data-aos="fade-in">
+        <div class="container">
+            <h2>Register</h2>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <div class='container' data-aos='fade-up' style="margin-top: 5px;">
+        <div class="form-group">
+            <form>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-warning">Register</button>
+            </form>
+        </div>
+
+        <p> Already a user? <a href="{% url 'accounts:login' %}">Login</a></p>
+
+    </div>
+{% endblock content %}
